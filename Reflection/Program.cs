@@ -11,19 +11,19 @@ namespace Reflection
     {
         static void Main(string[] args)
         {
-            //DortIslem dortIslem = new DortIslem(2, 3);
-            //dortIslem.Topla2();
-            //dortIslem.Topla(2, 3);
+            //FourOperation fourOperation = new FourOperation(2, 3);
+            //fourOperation.plus2();
+            //fourOperation.plus(2, 3);
 
-            var type = typeof(DortIslem);
+            var type = typeof(FourOperation);
 
-            //DortIslem dortIslem = (DortIslem) Activator.CreateInstance(type,6,7);
-            //Console.WriteLine(dortIslem.Topla(4, 5));
-            //Console.WriteLine(dortIslem.Topla2(6,7));
+            //FourOperation fourOperation = (FourOperation) Activator.CreateInstance(type,6,7);
+            //Console.WriteLine(fourOperation.plus(4, 5));
+            //Console.WriteLine(fourOperation.plus2(6,7));
 
             var instance = Activator.CreateInstance(type, 6, 7);
 
-            //Console.WriteLine(instance.GetType().GetMethod("Topla2").Invoke(instance,null));
+            //Console.WriteLine(instance.GetType().GetMethod("plus2").Invoke(instance,null));
 
             //MethodInfo methodInfo = instance.GetType().GetMethod("plus2");
 
@@ -51,59 +51,5 @@ namespace Reflection
         }
     }
 
-    public class DortIslem
-    {
-        private int _number1;
-        private int _number2;
-        
-        public DortIslem(int number1, int number2)
-        {
-            _number1 = number1;
-            _number2 = number2;
-
-        }
-
-        public int plus(int number1, int number2)
-        {
-            return number1 + number2;
-        }
-
-        public int subtract(int number1, int number2)
-        {
-            return number1 - number2;
-        }
-
-        public int multiply(int number1, int number2)
-        {
-            return number1 * number2;
-        }
-
-        public int divide(int number1, int number2)
-        {
-            return number1 / number2;
-        }
-
-        //******************************************
-        //********** With Referance Types **********
-
-        public int plus2(int sayi1, int sayi2)
-        {
-            return _number1 + _number2;
-        }
-
-        public int substract2(int sayi1, int sayi2)
-        {
-            return _number1 - _number2;
-        }
-
-        public int multiply2(int sayi1, int sayi2)
-        {
-            return _number1 * _number2;
-        }
-
-        public int divide2(int sayi1, int sayi2)
-        {
-            return _number1 / _number2;
-        }
-    }
+    
 }
